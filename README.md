@@ -8,7 +8,7 @@ done
 
 выключить auto commit
 
-  \set AUTOCOMMIT off
+    \set AUTOCOMMIT off
 
 done
 
@@ -35,8 +35,8 @@ done
 
 ##  2.	посмотреть текущий уровень изоляции: show transaction isolation level
 
-  postgres=# show transaction isolation level;
-   transaction_isolation
+    postgres=# show transaction isolation level;
+    transaction_isolation
   -----------------------
    read committed
   (1 row)
