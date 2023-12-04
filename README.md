@@ -107,7 +107,7 @@ postgres=# \q
 
 
 
-# Home Work otus-pgsql-hw-lesson-3
+# Home Work otus-pgsql-hw-lesson-2
 
 зайти вторым ssh (вторая сессия)
 запустить везде psql из под пользователя postgres
