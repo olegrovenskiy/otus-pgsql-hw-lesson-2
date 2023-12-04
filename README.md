@@ -201,42 +201,42 @@ done
 
 ##  9.	завершите транзакцию во второй сессии
 
-  postgres=# commit;
-  WARNING:  there is no transaction in progress
-  COMMIT
-  postgres=#
+             postgres=# commit;
+             WARNING:  there is no transaction in progress
+             COMMIT
+             postgres=#
 
 ##  10. начать новые но уже repeatable read транзации - set transaction isolation level repeatable read;
 
-  postgres=*# set transaction isolation level repeatable read;
-  SET
-  postgres=*# show transaction isolation level;
-   transaction_isolation
-  -----------------------
-   repeatable read
-  (1 row)
-  
-  postgres=*#
+             postgres=*# set transaction isolation level repeatable read;
+             SET
+             postgres=*# show transaction isolation level;
+              transaction_isolation
+             -----------------------
+              repeatable read
+             (1 row)
+             
+             postgres=*#
 
 
 ##  11.	в первой сессии добавить новую запись insert into persons(first_name, second_name) values('sveta', 'svetova');
 
-  postgres=*# insert into persons(first_name, second_name) values('sveta', 'svetova');
-  INSERT 0 1
-  postgres=*#
+             postgres=*# insert into persons(first_name, second_name) values('sveta', 'svetova');
+             INSERT 0 1
+             postgres=*#
 
 ##  11.	сделать select* from persons во второй сессии*
 
-  postgres=# select * from persons;
-   id | first_name | second_name
-  ----+------------+-------------
-    1 | ivan       | ivanov
-    2 | petr       | petrov
-    3 | sergey     | sergeev
-  
-  (3 rows)
-  
-  postgres=# ^C
+             postgres=# select * from persons;
+              id | first_name | second_name
+             ----+------------+-------------
+               1 | ivan       | ivanov
+               2 | petr       | petrov
+               3 | sergey     | sergeev
+             
+             (3 rows)
+             
+             postgres=# ^C
 
 
 
