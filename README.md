@@ -125,50 +125,50 @@ done
 
 ##  1.	в первой сессии новую таблицу и наполнить ее данными create table persons(id serial, first_name text, second_name text); insert into persons(first_name, second_name) values('ivan', 'ivanov'); insert into persons(first_name, second_name) values('petr', 'petrov'); commit;
 
-  postgres=# create table persons(id serial, first_name text, second_name text); insert into persons(first_name, second_name) values('ivan', 'ivanov'); insert into persons(first_name, second_name) values('petr', 'petrov'); commit;
-  CREATE TABLE
-  INSERT 0 1
-  INSERT 0 1
-  COMMIT
-  postgres=#
-
-
-  postgres=*# select * from persons;
-   id | first_name | second_name
-  ----+------------+-------------
-    1 | ivan       | ivanov
-    2 | petr       | petrov
-  (2 rows)
+             postgres=# create table persons(id serial, first_name text, second_name text); insert into persons(first_name, second_name) values('ivan', 'ivanov'); insert into persons(first_name, second_name) values('petr', 'petrov'); commit;
+             CREATE TABLE
+             INSERT 0 1
+             INSERT 0 1
+             COMMIT
+             postgres=#
+           
+           
+             postgres=*# select * from persons;
+              id | first_name | second_name
+             ----+------------+-------------
+               1 | ivan       | ivanov
+               2 | petr       | petrov
+             (2 rows)
 
 
 
 ##  2.	посмотреть текущий уровень изоляции: show transaction isolation level
 
-    postgres=# show transaction isolation level;
-    transaction_isolation
-  -----------------------
-   read committed
-  (1 row)
-  
-  postgres=#
+               postgres=# show transaction isolation level;
+               transaction_isolation
+             -----------------------
+              read committed
+             (1 row)
+             
+             postgres=#
 
 
 ##  3.	начать новую транзакцию в обоих сессиях с дефолтным (не меняя) уровнем изоляции
 в первой сессии добавить новую запись insert into persons(first_name, second_name) values('sergey', 'sergeev');
 
-    postgres=# insert into persons(first_name, second_name) values('sergey', 'sergeev');
-    INSERT 0 1
-    postgres=*#
+               postgres=# insert into persons(first_name, second_name) values('sergey', 'sergeev');
+               INSERT 0 1
+               postgres=*#
 
 
 ##  4.	сделать select from persons во второй сессии
 
-  postgres=# select * from persons;
-   id | first_name | second_name
-  ----+------------+-------------
-    1 | ivan       | ivanov
-    2 | petr       | petrov
-  (2 rows)
+             postgres=# select * from persons;
+              id | first_name | second_name
+             ----+------------+-------------
+               1 | ivan       | ivanov
+               2 | petr       | petrov
+             (2 rows)
 
 
 ##  5.	видите ли вы новую запись и если да то почему?
