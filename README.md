@@ -184,15 +184,15 @@ done
 
 ##  7.	сделать select from persons во второй сессии
 
-  postgres=# select * from persons;
-   id | first_name | second_name
-  ----+------------+-------------
-    1 | ivan       | ivanov
-    2 | petr       | petrov
-    3 | sergey     | sergeev
-  (3 rows)
-  
-  postgres=#
+             postgres=# select * from persons;
+              id | first_name | second_name
+             ----+------------+-------------
+               1 | ivan       | ivanov
+               2 | petr       | petrov
+               3 | sergey     | sergeev
+             (3 rows)
+             
+             postgres=#
 
 ##  8.	видите ли вы новую запись и если да то почему?
 
