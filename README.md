@@ -22,8 +22,8 @@ https://orcacore.com/install-postgresql-15-centos-7/
 
 получил ошибку
 
-Error: Package: postgresql15-15.5-1PGDG.rhel7.x86_64 (pgdg15)
-           Requires: libzstd >= 1.4.0
+           Error: Package: postgresql15-15.5-1PGDG.rhel7.x86_64 (pgdg15)
+                      Requires: libzstd >= 1.4.0
 
 для решения нашёл соответствующий пакет на https://pkgs.org/ (нужный пакет в соответствии с архитектурой)
 
@@ -32,19 +32,19 @@ Error: Package: postgresql15-15.5-1PGDG.rhel7.x86_64 (pgdg15)
 
 7. yum install -y postgresql15-server
 
-Installed:
-  postgresql15-server.x86_64 0:15.5-1PGDG.rhel7
-
-Dependency Installed:
-  libicu.x86_64 0:50.2-4.el7_7                             postgresql15.x86_64 0:15.5-1PGDG.rhel7
-  postgresql15-libs.x86_64 0:15.5-1PGDG.rhel7
+                      Installed:
+                        postgresql15-server.x86_64 0:15.5-1PGDG.rhel7
+                      
+                      Dependency Installed:
+                        libicu.x86_64 0:50.2-4.el7_7                             postgresql15.x86_64 0:15.5-1PGDG.rhel7
+                        postgresql15-libs.x86_64 0:15.5-1PGDG.rhel7
 
 
 8. psql -V
 
-        [root@mck-network-test ~]#  psql -V
-        psql (PostgreSQL) 15.5
-        [root@mck-network-test ~]#
+                              [root@mck-network-test ~]#  psql -V
+                              psql (PostgreSQL) 15.5
+                              [root@mck-network-test ~]#
 
 
 9.
