@@ -4,23 +4,25 @@
 2.    зайти вторым ssh (вторая сессия)
 3.    запустить везде psql из под пользователя postgres
 
-Инсталяция PostgreSQL-15 на ВМ в виртуализации ВМваре, Centos-7, как корпоративный стандарт
+Инсталировал PostgreSQL-15 на ВМ в виртуализации ВМваре, Centos-7, так как это корпоративный стандарт, в компании где работаю.
 
 
 1. Centos 7 10.102.6.27
 
 2. yum update
 
-Использовал информацию с :
+Использовал информацию с официальных рессурсов:
 
 https://www.postgresql.org/download/linux/redhat/
 https://orcacore.com/install-postgresql-15-centos-7/
+
+Набор комманд:
 
 3. yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
 4. yum install -y postgresql15-server
 
-получил ошибку
+получил ошибку, отсутствует пакет
 
            Error: Package: postgresql15-15.5-1PGDG.rhel7.x86_64 (pgdg15)
                       Requires: libzstd >= 1.4.0
@@ -40,7 +42,8 @@ https://orcacore.com/install-postgresql-15-centos-7/
                         postgresql15-libs.x86_64 0:15.5-1PGDG.rhel7
 
 
-8. psql -V
+
+8. Проверка инсталяции и версии командой psql -V
 
                               [root@mck-network-test ~]#  psql -V
                               psql (PostgreSQL) 15.5
@@ -102,7 +105,7 @@ postgres=# \password postgres
 Enter new password: <new-password>
 postgres=# \q
 
-
+смог подключиться PgAdminom
 
 
 
