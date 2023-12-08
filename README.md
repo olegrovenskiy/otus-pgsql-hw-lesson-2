@@ -1,4 +1,4 @@
-# Инсталляция PostgreeSQL
+# ДЗ. Часть 1. Инсталляция PostgreeSQL
 
 1.    поставить PostgreSQL
 2.    зайти вторым ssh (вторая сессия)
@@ -107,7 +107,7 @@ postgres=# \q
 
 
 
-# Home Work otus-pgsql-hw-lesson-2
+# ДЗ. Часть 2. Работа с БД.
 
 зайти вторым ssh (вторая сессия)
 запустить везде psql из под пользователя postgres
@@ -261,13 +261,30 @@ create table persons(id serial, first_name text, second_name text); insert into 
                1 | ivan       | ivanov
                2 | petr       | petrov
                3 | sergey     | sergeev
-               4 | sveta      | svetova
-             (4 rows)
+
+             (3 rows)
              
              postgres=# ^C
 
 ##  13.	видите ли вы новую запись и если да то почему?
 
-да, так как прошёл commit
+нет, так как в соответствии с уровнем изоляции, мы не завершили транзакцию в своей сессии, то не
+видим изменения, внесённые в другой сессии
 
+## 14.     завершить вторую транзакцию
+сделать select * from persons во второй сессии
 
+             postgres=# select * from persons;
+              id | first_name | second_name
+             ----+------------+-------------
+               1 | ivan       | ivanov
+               2 | petr       | petrov
+               3 | sergey     | sergeev
+               4 | sveta      | svetova
+             (4 rows)
+             
+             postgres=# ^C
+
+## 15.  видите ли вы новую запись и если да то почему?
+
+да, видим, теперь в другой сессии прошёл коммит, и мы в своей сессии делаем новую транзакцию, соответственно видим новые данные
