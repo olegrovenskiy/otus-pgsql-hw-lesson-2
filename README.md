@@ -269,3 +269,5 @@ create table persons(id serial, first_name text, second_name text); insert into 
 ##  13.	видите ли вы новую запись и если да то почему?
 
 да, так как прошёл commit
+
+
