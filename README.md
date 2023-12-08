@@ -47,7 +47,7 @@ https://orcacore.com/install-postgresql-15-centos-7/
                               [root@mck-network-test ~]#
 
 
-9.
+9. Запуск сервиса БД и инициализация
 
         [root@mck-network-test ~]# postgresql-15-setup initdb
         Initializing database ... OK
