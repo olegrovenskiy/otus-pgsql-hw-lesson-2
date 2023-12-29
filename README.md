@@ -32,7 +32,7 @@ https://orcacore.com/install-postgresql-15-centos-7/
 6. yum localinstall https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/l/libzstd-1.5.5-1.el7.x86_64.rpm
 
 
-7. yum install -y postgresql15-server
+7. yum install -y postgresql15-server !!!!!  были проблемы (yum install postgresql15 postgresql15-server postgresql15-contrib  -- такой командой установился в том числе pgbench)
 
                       Installed:
                         postgresql15-server.x86_64 0:15.5-1PGDG.rhel7
@@ -84,7 +84,7 @@ https://orcacore.com/install-postgresql-15-centos-7/
         [root@mck-network-test ~]#
 
 
-
+!!!!!  сразу в psql поменять пароль пользователя postgres
 
 открытие 5432 для внешних пользователей
 
